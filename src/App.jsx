@@ -3,7 +3,7 @@ import Header from './Header';
 import PropertyCard from './PropertyCard';
 import SearchContext from './context/search/SearchContext';
 
-function App() {
+const App = () => {
   // use this state to keep track of the user's saved/bookmarked properties
   const [savedProperties, setSavedProperties] = useState([]);
   const [properties, setProperties] = useState();
@@ -20,6 +20,22 @@ function App() {
     fetchPropertyData();
   }, []);
 
+  const onClickFavouriteHandler = (item) => {
+    if (savedProperties.find((t) => t.id === item) === undefined) {
+      setSavedProperties([
+        {
+          id: item,
+        },
+        ...savedProperties,
+      ]);
+      alert('Added to Favourites');
+    } else {
+      setSavedProperties(savedProperties.filter((t) => t.id !== item));
+      alert('Removed from Favourites');
+    }
+  };
+
+  console.log(savedProperties);
   return (
     <div className="container mx-auto my-5">
       <Header onSearch={setSearchTerm} />
@@ -35,11 +51,17 @@ function App() {
                     .includes(searchTerm.toLowerCase());
             })
             .map((property) => (
-              <PropertyCard key={property.property_id} property={property} />
+              <PropertyCard
+                key={property.property_id}
+                property={property}
+                onClickFavourite={() =>
+                  onClickFavouriteHandler(property.property_id)
+                }
+              />
             ))}
       </div>
     </div>
   );
-}
+};
 
 export default App;

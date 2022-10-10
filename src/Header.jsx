@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchBox from './SearchBox';
 
-function Header({ onSearch }) {
+const Header = ({ onSearch }) => {
   return (
     <header className="flex flex-col md:flex-row justify-between">
       <h1 className="text-8xl">Posh Properties</h1>
@@ -9,6 +9,6 @@ function Header({ onSearch }) {
       <SearchBox setSearch={onSearch} />
     </header>
   );
-}
+};
 
 export default Header;

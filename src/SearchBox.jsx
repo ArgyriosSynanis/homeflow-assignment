@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaSearch } from 'react-icons/fa';
 
-function SearchBox({ setSearch }) {
+const SearchBox = ({ setSearch }) => {
   const searchHandler = (e) => {
     setSearch(e.target.value);
   };
@@ -21,6 +21,6 @@ function SearchBox({ setSearch }) {
       />
     </div>
   );
-}
+};
 
 export default SearchBox;

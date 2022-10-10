@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaBookmark } from 'react-icons/fa';
 
-function PropertyCard({ property }) {
+const PropertyCard = ({ property, onClickFavourite }) => {
   const [isChecked, setIsChecked] = useState(false);
 
   const isCheckedHandler = () => {
@@ -23,6 +23,7 @@ function PropertyCard({ property }) {
         <button
           className="absolute top-0 right-2"
           title="Click to bookmark this property"
+          onClick={onClickFavourite}
         >
           <FaBookmark
             className={isChecked ? 'text-red-700' : 'text-yellow-400'}
@@ -41,6 +42,6 @@ function PropertyCard({ property }) {
       </div>
     </div>
   );
-}
+};
 
 export default PropertyCard;
