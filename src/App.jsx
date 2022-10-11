@@ -21,7 +21,6 @@ const App = () => {
       const propertyExists = bookmarkedProperties.some(
         (property) => property.property_id === item.property_id
       );
-      console.log(propertyExists);
       if (!propertyExists) {
         setBookmarkedProperties((prevProperties) => [item, ...prevProperties]);
       } else {
@@ -42,7 +41,6 @@ const App = () => {
     fetchPropertyData();
   }, []);
 
-  console.log(bookmarkedProperties);
   return (
     <div className="container mx-auto my-5">
       <Header onSearch={setSearchTerm} />
