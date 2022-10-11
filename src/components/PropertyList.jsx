@@ -28,7 +28,7 @@ const PropertyList = ({
           key={property.property_id}
           property={property}
           isChecked={isBookmarked(property)}
-          onClickFavourite={() => onClickBookmark(property)}
+          onClickBookmark={() => onClickBookmark(property)}
         />
       ))}
     </div>

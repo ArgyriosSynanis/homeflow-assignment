@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaBookmark } from 'react-icons/fa';
 
-const PropertyCard = ({ property, onClickFavourite, isChecked }) => {
+const PropertyCard = ({ property, onClickBookmark, isChecked }) => {
   const imgUrl = !!property.photos[0]
     ? `https://mr0.homeflow.co.uk/${property.photos[0]}`
     : './coming-soon.jpg';
@@ -12,7 +12,7 @@ const PropertyCard = ({ property, onClickFavourite, isChecked }) => {
         <button
           className="absolute top-0 right-2"
           title="Click to bookmark this property"
-          onClick={onClickFavourite}
+          onClick={onClickBookmark}
         >
           <FaBookmark
             className={isChecked ? 'text-red-700' : 'text-yellow-400'}
