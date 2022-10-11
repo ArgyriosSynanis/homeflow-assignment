@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext, useCallback } from 'react';
 import Header from './components/Header';
-import FavouriteList from './components/BookmarkList';
+import Bookmarklist from './components/BookmarkList';
 import SearchContext from './context/search/SearchContext';
 import PropertyList from './components/PropertyList';
 
@@ -44,7 +44,7 @@ const App = () => {
   return (
     <div className="container mx-auto my-5">
       <Header onSearch={setSearchTerm} />
-      <FavouriteList
+      <Bookmarklist
         bookmarks={bookmarkedProperties}
         onDelete={onDeleteBookmark}
       />
