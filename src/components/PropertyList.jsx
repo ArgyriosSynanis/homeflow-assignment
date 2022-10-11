@@ -5,7 +5,7 @@ import EmptyList from './EmptyList';
 const PropertyList = ({
   properties,
   searchTerm,
-  onClickFavouriteHandler,
+  onClickBookmark,
   bookmarkedProperties,
 }) => {
   const filteredProperties =
@@ -28,7 +28,7 @@ const PropertyList = ({
           key={property.property_id}
           property={property}
           isChecked={isBookmarked(property)}
-          onClickFavourite={() => onClickFavouriteHandler(property)}
+          onClickFavourite={() => onClickBookmark(property)}
         />
       ))}
     </div>

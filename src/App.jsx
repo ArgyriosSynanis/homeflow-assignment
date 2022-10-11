@@ -16,7 +16,7 @@ const App = () => {
     );
   };
 
-  const onClickFavouriteHandler = useCallback(
+  const onClickBookmark = useCallback(
     (item) => {
       const propertyExists = bookmarkedProperties.some(
         (property) => property.property_id === item.property_id
@@ -49,7 +49,7 @@ const App = () => {
         onDelete={onDeleteBookmark}
       />
       <PropertyList
-        onClickFavouriteHandler={onClickFavouriteHandler}
+        onClickBookmark={onClickBookmark}
         searchTerm={searchTerm}
         properties={properties}
         bookmarkedProperties={bookmarkedProperties}
